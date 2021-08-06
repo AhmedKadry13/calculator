@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="calculator.js" defer="defer"></script>
+     <script src="new-calc.js" defer="defer"></script>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div id="inputs">
+                <input type="text" id="input" autofocus placeholder="enter number" onkeypress="return isNumber(event)">
+            </div>
+        
+            <div class="current-operation">
+                <p id="current-operation"></p>
+            </div>
+            
+            <div class="result-group">
+                <p id="result-container">Result : <span id="result">0</span></p>
+            </div>
+
+            <div class="pad">
+                <div class="num-pad"> 
+                    <button id="clear-operand" onclick="clearOperand()">ce</button>
+                    <button id="clear-all" onclick="clearOperation()">C</button>
+                    <button id="reminder" onclick="reminder()">%</button>   
+                    <button id="num1" onclick="one()">1</button>
+                    <button id="num2" onclick="two()">2</button>
+                    <button id="num3" onclick="three()">3</button>
+                    <button id="num4" onclick="four()">4</button>
+                    <button id="num5" onclick="five()">5</button>
+                    <button id="num6" onclick="six()">6</button>
+                    <button id="num7" onclick="seven()">7</button>
+                    <button id="num8" onclick="eight()">8</button>
+                    <button id="num9" onclick="nine()">9</button>
+                    <button id="num0" onclick="zero()">0</button>
+                    <button id="dot" onclick="dot()">.</button>
+                    <button id="negate" onclick="negate()">+/-</button>
+                </div>
+
+                <div class="ops-buttons">
+                    <button id="divide" onclick="divide()">&#247;</button>
+                    <button id="multiply" onclick="multiply()">*</button>
+                    <button id="subtract" onclick="subtract()">-</button>
+                    <button id="add" onclick="add()">+</button>
+                    <button id="equal" onclick="getResults()">=</button>
+                </div>    
+            </div>
+        </div>
+        <div class="history-group">
+            <button id="clear-history" onclick="clearHistory()">Clear History</button>
+            <p id="history">Operations History :<br>          
+            </p>
+        </div>
+    </div>
+</body>
+</html>

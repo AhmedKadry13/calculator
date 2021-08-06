@@ -1,0 +1,116 @@
+body{
+    background: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    background-color: lightpink;
+    height: 360px ;
+}
+
+.calculator{
+    background-color: lightcyan;
+    width: 60%;
+    margin: 10px;
+}
+
+.history-group{
+    background-color:lightgray;
+    width: 40%;
+    margin: 10px;
+}
+
+.pad{
+    display: flex;
+    justify-content: center;
+    width: 480px;
+}
+
+.num-pad{
+    max-width: 25%;
+    max-height: 600px;
+}
+
+.ops-buttons{
+    max-width: 10%;
+    margin-left: -10px;
+}
+
+
+p{
+    font-weight: 600;
+    margin-bottom: 3%;
+}
+
+button{
+    background: white;
+    color: black;
+    margin-top: 5px;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 8px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+
+}
+
+#clear-operand{
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+
+#clear-all{
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+
+#reminder{
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+
+#negate{
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+
+#history span{
+    color: blue;
+}
+
+.result-group span{
+    color: darkgreen;
+}
+
+input{
+    color: brown;
+    border: 1.5px solid black;
+    border-radius: 8px;
+    padding: 8px;
+    width: 60%;
+    margin-top: 10px;;
+}
+
+#result{
+    color: brown;
+}
+
+#current-operation{
+    color: brown;
+    min-height: 18px;;
+}
