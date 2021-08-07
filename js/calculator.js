@@ -19,7 +19,7 @@ const clearOperandBtn = document.getElementById("clear-operand");
 const clearAllBtn = document.getElementById("clear-all");
 
 //clear history
-document.getElementById("clear-history").addEventListener("click", clearHistory());
+document.getElementById("clear-history").addEventListener("click", clearHistory);
 
 //get operations butons from the app
 const addBtn = document.getElementById("add");
