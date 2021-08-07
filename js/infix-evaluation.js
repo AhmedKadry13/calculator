@@ -1,5 +1,5 @@
 // infix algorithm 
-export default function evaluate(exp){
+function evaluate(exp){
     //getting copy of the expression then,
     //removing minus from the expression 
     let ex = removeMinus(exp.slice());
@@ -123,3 +123,5 @@ function removeMinus(exp) {
     }
     return result;
 }
+
+export { evaluate as default };
