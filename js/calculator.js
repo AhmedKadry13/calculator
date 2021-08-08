@@ -1,6 +1,9 @@
 //calculator with no operator precedence for instant result
 let currentOperationHolder = [];
 
+let numbersLiterals = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+let allowedOperations = ["+", "-", "*", "/", "=", "Backspace"]
+
 let numbers = [];
 let operations = [];
 
@@ -210,7 +213,7 @@ function equal() {
     currentOperationHolder.push(op1);
     currentOperationHolder.push("=");
     currentOperationHolder.push(finalResult);
-    currentOperationHolder.push("</span>")
+    currentOperationHolder.push("</span>");
     currentOperationHolder.push("<br>");
     history.innerHTML += currentOperationHolder.join(" ");
     currentOperationHolder = [];
@@ -328,4 +331,35 @@ function peek(stack) {
 //clear operations history
 function clearHistory(){
     history.innerHTML = "Operations History :<br>";
+}
+
+function checkKey(e) {
+
+    let key = e.key;
+    if(!numbersLiterals.includes(key) && !allowedOperations.includes(key)){
+        return false;
+    }
+    else if(allowedOperations.includes(key)){
+        switch (key) {
+            case "+":
+                add();
+                return false;
+            case "-":
+                subtract();
+                return false;
+            case "*":
+                multiply();
+                return false;
+            case "/":
+                divide();
+                return false;
+            case "=":
+                equal();
+                return false;
+            case "Backspace":
+                return true;
+            default:
+                return false;
+        }
+    }
 }

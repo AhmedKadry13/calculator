@@ -14,7 +14,7 @@
     <div class="container">
         <div class="calculator">
             <div id="inputs">
-                <input type="text" id="input" autofocus placeholder="enter number" onkeypress="return isNumber(event)">
+                <input type="text" id="input" autofocus placeholder="enter number" onkeydown="return checkKey(event)">
             </div>
         
             <div class="current-operation">
