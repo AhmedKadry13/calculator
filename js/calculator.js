@@ -1,4 +1,4 @@
-//calculator with no operator precedence for instant result
+
 let currentOperationHolder = [];
 
 let numbersLiterals = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
@@ -17,15 +17,22 @@ const currentoperation = document.getElementById("current-operation");
 const history = document.getElementById("history");
 const resultP = document.getElementById("result");
 const inputField1 = document.getElementById("input");
+const clearHistoryBtn = document.getElementById("clear-history"); 
+clearHistoryBtn.addEventListener("click", clearHistory);
+
+let historyStorage = {"items":[]};
+if(localStorage.getItem("expressions") == null){
+    window.localStorage.setItem('expressions', JSON.stringify(historyStorage));
+}
+else{
+    renderHistoryList();
+}
 
 const clearOperandBtn = document.getElementById("clear-operand");
 clearOperandBtn.addEventListener("click", clearOperand);
 
 const clearAllBtn = document.getElementById("clear-all");
 clearAllBtn.addEventListener("click", clearOperation);
-
-//clear history
-document.getElementById("clear-history").addEventListener("click", clearHistory);
 
 //get operations butons from the app
 const addBtn = document.getElementById("add");
@@ -216,6 +223,7 @@ function equal() {
     currentOperationHolder.push("</span>");
     currentOperationHolder.push("<br>");
     history.innerHTML += currentOperationHolder.join(" ");
+    addNewExpressionToStorage(currentOperationHolder.join(" "))
     currentOperationHolder = [];
 
     //clear input field
@@ -331,6 +339,8 @@ function peek(stack) {
 //clear operations history
 function clearHistory(){
     history.innerHTML = "Operations History :<br>";
+    historyStorage = {"items":[]};
+    window.localStorage.setItem('expressions', JSON.stringify(historyStorage));
 }
 
 function checkKey(e) {
@@ -362,4 +372,16 @@ function checkKey(e) {
                 return false;
         }
     }
+}
+
+function renderHistoryList() {
+    history.innerHTML = "Operations History :<br>";
+    let currentExpressions = JSON.parse(window.localStorage.getItem('expressions'));
+    currentExpressions.items.forEach(expression => {history.innerHTML += expression});
+}
+
+function addNewExpressionToStorage(expression) {
+    let CurrentExpressions = JSON.parse(window.localStorage.getItem('expressions'));
+    CurrentExpressions.items.push(expression);
+    window.localStorage.setItem('expressions', JSON.stringify(CurrentExpressions));
 }
