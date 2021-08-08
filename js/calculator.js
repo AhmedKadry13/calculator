@@ -109,18 +109,86 @@ function subtract(){
 
 //multiply
 function multiply() {
-    
+    //check for empty input
+    let op1 = inputField1.value;
+    let operator = "*";
+ 
+    if(op1 == null || op1 == NaN || op1 == undefined || op1 == ""){
+        return ;
+    }
+ 
+     //pushing operand to numbers
+     numbers.push(op1);
+     pushOrProcess(operator);
+     
+     //changing current operation <p>
+     currentoperation.textContent += op1 + " * ";
+     inputField1.value = null;
+     enteringNewOperand = true;
+ 
+     if(startNew){
+         currentOperationHolder.push("<span>");
+         startNew = false;
+     }
+     
+     currentOperationHolder.push(op1);
+     currentOperationHolder.push("*");
 }
 
 //divide
 function divide() {
-    
+    let op1 = inputField1.value;
+    let operator = "/";
+ 
+    if(op1 == null || op1 == NaN || op1 == undefined || op1 == ""){
+        return ;
+    }
+ 
+     //pushing operand to numbers
+     numbers.push(op1);
+     pushOrProcess(operator);
+     
+     //changing current operation <p>
+     currentoperation.textContent += op1 + " \u00F7 ";
+     inputField1.value = null;
+     enteringNewOperand = true;
+ 
+     if(startNew){
+         currentOperationHolder.push("<span>");
+         startNew = false;
+     }
+     
+     currentOperationHolder.push(op1);
+     currentOperationHolder.push("\u00F7");
 }
 
 //reminder
 function reminder() {
-    
+    let op1 = inputField1.value;
+    let operator = "%";
+ 
+    if(op1 == null || op1 == NaN || op1 == undefined || op1 == ""){
+        return ;
+    }
+ 
+     //pushing operand to numbers
+     numbers.push(op1);
+     pushOrProcess(operator);
+     
+     //changing current operation <p>
+     currentoperation.textContent += op1 + " % ";
+     inputField1.value = null;
+     enteringNewOperand = true;
+ 
+     if(startNew){
+         currentOperationHolder.push("<span>");
+         startNew = false;
+     }
+     
+     currentOperationHolder.push(op1);
+     currentOperationHolder.push("%");
 }
+
 //equal - get the result (pressing equal) and append new operation to history 
 function equal() {
 
