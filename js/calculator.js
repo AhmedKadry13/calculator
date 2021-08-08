@@ -223,7 +223,7 @@ function equal() {
 
     //clear current operation
     currentoperation.innerText = null;
-
+    startNew = true;
 }
 
 //clear current operation from view
