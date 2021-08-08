@@ -89,9 +89,8 @@ function subtract(){
 
     //pushing operand to numbers
     numbers.push(op1);
-    operations.push ("+");
+    pushOrProcess("+");
     numbers.push("-1");
-
     pushOrProcess("*")
     
     //changing current operation <p>
