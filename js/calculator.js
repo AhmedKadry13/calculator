@@ -16,7 +16,10 @@ const resultP = document.getElementById("result");
 const inputField1 = document.getElementById("input");
 
 const clearOperandBtn = document.getElementById("clear-operand");
+clearOperandBtn.addEventListener("click", clearOperand);
+
 const clearAllBtn = document.getElementById("clear-all");
+clearAllBtn.addEventListener("click", clearOperation);
 
 //clear history
 document.getElementById("clear-history").addEventListener("click", clearHistory);
@@ -221,6 +224,26 @@ function equal() {
     //clear current operation
     currentoperation.innerText = null;
 
+}
+
+//clear current operation from view
+function clearOperation(){
+    inputField1.value = null;
+    enteringNewOperand = false;
+    firstOperand = true;
+
+    //clear current operation
+    currentoperation.innerText = null;
+    resultP.innerText = 0;
+
+    numbers = [];
+    operations = [];
+}
+
+//clear clear operand
+function clearOperand(){
+    inputField1.value = null;
+    enteringNewOperand = false;
 }
 
 //determing the precedence of the operators
